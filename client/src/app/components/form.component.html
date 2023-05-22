@@ -1,0 +1,16 @@
+<form [formGroup]="form" (submit)="processForm()">
+  <input
+    type="text"
+    size="30"
+    placeholder="Input a city"
+    formControlName="city"
+  /><br />
+  <input type="radio" id="standard" value="standard" formControlName="units" />
+  <label for="standard">Standard</label>
+  <input type="radio" id="metric" value="metric" formControlName="units" />
+  <label for="metric">Metric</label>
+  <input type="radio" id="imperial" value="imperial" formControlName="units" />
+  <label for="imperial">Imperial</label>
+  <br />
+  <button type="submit" [disabled]="form.invalid">Get Weather!</button>
+</form>
