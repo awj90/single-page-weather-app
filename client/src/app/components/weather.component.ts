@@ -20,7 +20,7 @@ export class WeatherComponent implements OnInit {
 
   ngOnInit(): void {
     this.city = this.activatedRoute.snapshot.params['city'];
-    this.units = this.activatedRoute.snapshot.queryParams['units'] || 'metric'; // using short circuiting to assin a default value
+    this.units = this.activatedRoute.snapshot.queryParams['units'] || 'metric'; // using short circuiting to assign a default value
     this.title.setTitle(`Current Weather at ${this.city}`);
     this.weather$ = this.weatherService.getWeather(this.city, this.units);
   }
