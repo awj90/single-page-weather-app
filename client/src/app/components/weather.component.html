@@ -4,27 +4,47 @@
   <table>
     <tr>
       <td>Temperature:</td>
-      <td>{{ weather.main.temp }}</td>
+      <td>
+        {{ weather.main.temp }}
+        {{
+          units === "imperial" ? "degF" : units === "metric" ? "degC" : "Kelvin"
+        }}
+      </td>
     </tr>
     <tr>
       <td>Feels Like:</td>
-      <td>{{ weather.main.feels_like }}</td>
+      <td>
+        {{ weather.main.feels_like }}
+        {{
+          units === "imperial" ? "degF" : units === "metric" ? "degC" : "Kelvin"
+        }}
+      </td>
     </tr>
     <tr>
       <td>Min Temperature:</td>
-      <td>{{ weather.main.temp_min }}</td>
+      <td>
+        {{ weather.main.temp_min }}
+        {{
+          units === "imperial" ? "degF" : units === "metric" ? "degC" : "Kelvin"
+        }}
+      </td>
     </tr>
     <tr>
       <td>Max Temperature:</td>
-      <td>{{ weather.main.temp_max }}</td>
+      <td>
+        {{ weather.main.temp_max }}
+        {{
+          units === "imperial" ? "degF" : units === "metric" ? "degC" : "Kelvin"
+        }}
+      </td>
     </tr>
     <tr>
       <td>Pressure:</td>
-      <td>{{ weather.main.pressure }}</td>
+      <td>{{ weather.main.pressure }} hPa</td>
     </tr>
     <tr>
       <td>Humidity:</td>
-      <td>{{ weather.main.humidity }}</td>
+      <td>{{ weather.main.humidity }} %</td>
     </tr>
     <tr *ngFor="let w of weather.weather">
       <td><img src="{{ w.icon }}" width="200" height="auto" /></td>

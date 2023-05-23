@@ -16,11 +16,12 @@ export class WeatherComponent implements OnInit {
   weatherService = inject(WeatherService);
   weather$!: Observable<Weather>;
   city!: string;
+  units!: string;
 
   ngOnInit(): void {
     this.city = this.activatedRoute.snapshot.params['city'];
-    const units = this.activatedRoute.snapshot.queryParams['units'] || 'metric'; // using short circuiting to assin a default value
+    this.units = this.activatedRoute.snapshot.queryParams['units'] || 'metric'; // using short circuiting to assin a default value
     this.title.setTitle(`Current Weather at ${this.city}`);
-    this.weather$ = this.weatherService.getWeather(this.city, units);
+    this.weather$ = this.weatherService.getWeather(this.city, this.units);
   }
 }
